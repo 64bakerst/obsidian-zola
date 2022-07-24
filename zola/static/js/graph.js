@@ -51,11 +51,11 @@ var max_node_val = Math.max(...nodes.map((node) => node.value));
 if (curr_node) {
 	nodes.update({
 		id: curr_node.id,
-		value: Math.max(4, max_node_val * 2.5),
-		shape: "star",
+		value: Math.max(2, max_node_val * 1),
+		shape: "dot",
 		color: "#a6a7ed",
 		font: {
-			strokeWidth: 1,
+			strokeWidth: .5,
 		},
 		x: 0,
 		y: 0,
@@ -81,7 +81,7 @@ graph.on("selectNode", function (params) {
 		if (graph_link_replace) {
 			window.open(node.url, "_self");
 		} else {
-			window.open(node.url, "_blank");
+			window.open(node.url, "_self");
 		}
 	}
 });
@@ -91,7 +91,7 @@ graph.once("afterDrawing", function () {
 	if (curr_node) {
 		if (!graph_is_local) {
 			graph.focus(curr_node.id, {
-				scale: graph.getScale() * 1.8,
+				scale: graph.getScale() * 1,
 			});
 		}
 	} else {
@@ -101,7 +101,7 @@ graph.once("afterDrawing", function () {
 				x: 0,
 				y: -clientHeight / 3,
 			},
-			scale: graph.getScale() * 1.2,
+			scale: graph.getScale() * 0.9,
 		});
 	}
 });

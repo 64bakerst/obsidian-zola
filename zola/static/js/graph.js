@@ -51,7 +51,7 @@ var max_node_val = Math.max(...nodes.map((node) => node.value));
 if (curr_node) {
 	nodes.update({
 		id: curr_node.id,
-		value: Math.max(2, max_node_val * 1),
+		value: Math.max(2, max_node_val * 1.5),
 		shape: "dot",
 		color: "#a6a7ed",
 		font: {
@@ -101,7 +101,7 @@ graph.once("afterDrawing", function () {
 				x: 0,
 				y: -clientHeight / 3,
 			},
-			scale: graph.getScale() * 0.9,
+			scale: graph.getScale() * 1.2,
 		});
 	}
 });
